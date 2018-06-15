@@ -49,6 +49,8 @@ dependencies {
     'org.junit.vintage:junit-vintage-engine:4.12.1',
     'org.junit.platform:junit-platform-launcher:1.0.1',
     'org.junit.platform:junit-platform-runner:1.0.1')
+    
+    compile project(':JPAJobApplication')
 }
 
 eclipse {

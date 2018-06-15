@@ -6,7 +6,6 @@
 	<display-name>JPACrudProject</display-name>
 	<welcome-file-list>
 		<welcome-file>index.do</welcome-file>
-		<welcome-file>films.do</welcome-file>
 	</welcome-file-list>
 
 	<servlet>

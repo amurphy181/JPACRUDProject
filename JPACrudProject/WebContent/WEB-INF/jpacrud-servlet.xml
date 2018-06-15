@@ -24,7 +24,7 @@
 
 	<bean id="myEntityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="JPACrudProject" />
+		<property name="persistenceUnitName" value="jpacrudworkspace" />
 	</bean>
 
 	<bean id="myTransactionManager"
