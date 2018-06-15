@@ -37,6 +37,7 @@ public class Application {
 	@Column(name="posting_link")
 	private String postingLink;
 	private String comments;
+	
 	public String getCompany() {
 		return company;
 	}
