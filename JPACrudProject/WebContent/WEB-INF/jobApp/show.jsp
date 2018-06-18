@@ -7,10 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Specific Application Information</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 </head>
 <body>
-	<h2>Information on the job</h2>
+<div class="body" background-color:navy>
+	<h2>Company and Job Application Info</h2>
 	<div>
 		<h5>${jobApp.company}
 			<p>${jobApp.city}</p>
@@ -21,7 +24,14 @@
 		<input type="submit" value="Delete Job App" />
 		<form:hidden path="id"/>
 	</form:form>
+	<br>
+	<form:form action="updateJobApp.do" method="GET" modelAttribute="jobApp">
+		<input type="submit" value="Update Job App" />
+		<form:hidden path="id"/>
+	</form:form>
+	<br>
 	<a href="index.do">Take me to the main page!</a>
+	</div>
 </body>
 </html>
 

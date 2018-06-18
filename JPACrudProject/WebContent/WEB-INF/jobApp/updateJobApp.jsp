@@ -1,21 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="/path/to/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-<title>Add a freshly-applied job!</title>
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Update and Edit an Application</title>
 </head>
 <body>
 
-	<form:form action="jobAppAdded.do" method="POST"
-		modelAttribute="jobApp">
-
-		<form:label path="company">Company:</form:label>
-		<form:input path="company" />
+<form:form action="updateJobApp.do" method="POST" modelAttribute="jobApp">
+		
+		<form:label path="company">Company: </form:label>
+		<form:input path="company" type = "text" value = "${jobApp.company}"/>
 		<br />
 		<form:label path="jobTitle">Job Title:</form:label>
 		<form:input path="jobTitle" />
@@ -44,7 +48,8 @@
 		<form:label path="comments">Comments:</form:label>
 		<form:input path="comments" />
 		<br />
-
+		<form:hidden path="id"/>
+		
 		<input type="submit" value="Submit" />
 	</form:form>
 </body>

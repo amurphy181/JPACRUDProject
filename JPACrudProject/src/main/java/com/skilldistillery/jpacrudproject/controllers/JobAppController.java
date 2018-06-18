@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,6 +80,25 @@ public class JobAppController {
 
 		mv.setViewName("redirect:jobs.do");
 
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateJobApp.do", method = RequestMethod.GET)
+	public ModelAndView updateJobRedirect(int id) {
+		ModelAndView mv = new ModelAndView();
+		Application jobApp = jobAppDAO.show(id);
+		mv.addObject("jobApp", jobApp);
+		mv.setViewName("WEB-INF/jobApp/updateJobApp.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateJobApp.do", method = RequestMethod.POST)
+	public ModelAndView updateJob(@ModelAttribute("jobApp") Application jobApp, int id) {
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println("***********" + jobApp);
+		jobAppDAO.update(id, jobApp);
+		mv.setViewName("WEB-INF/jobApp/show.jsp");
 		return mv;
 	}
 

@@ -1,0 +1,36 @@
+.navbarTemplate {
+  background-color: #be9b7b;
+  margin: 5px;
+  width: auto;
+  max-width: fit-content;
+  justify-content: center;
+}
+
+body {
+  font-family: Oxygen, Tahoma, sans-serif;
+  background-color: #fff4e6;
+  color: navy;
+}
+
+.bodyText {
+  font-family: Oxygen, Tahoma, sans-serif;
+  background-color: navy;
+  color: white;
+}
+
+.flexContainer {
+  display: flex;
+  flex: auto;
+  padding: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+
+.headers {
+  color: navy;
+  text-align: center;
+
+}

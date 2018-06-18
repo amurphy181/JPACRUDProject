@@ -5,14 +5,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/myStyles.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Comprehensive List of Job Applications</title>
 </head>
 <body>
 	<c:forEach items="${jobApp }" var="jobApp">
 		<p>Company name:
 		<a href="getJobApp.do?fid=${jobApp.id }">${jobApp.company }</a> <br>
-		Details: ${jobApp.jobTitle }, ${jobApp.city }, ${jobApp.state }, ${jobApp.salary }
+		Details: Title: ${jobApp.jobTitle }<br> 
+		City: ${jobApp.city } <br>
+		State: ${jobApp.state } <br>
+		Salary: ${jobApp.salary } <br>
 			<br> </p>
 	</c:forEach>
 </body>

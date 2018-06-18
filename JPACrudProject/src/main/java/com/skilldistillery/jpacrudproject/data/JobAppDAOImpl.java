@@ -51,9 +51,22 @@ public class JobAppDAOImpl implements JobAppDAO {
 	}
 
 	@Override
-	public Application update(int id, Application updatedActor) {
-		// TODO Auto-generated method stub
-		return null;
+	public Application update(int id, Application updatedApplication) {
+		Application managed = em.find(Application.class, id);
+		
+		managed.setCompany(updatedApplication.getCompany());
+		managed.setJobTitle(updatedApplication.getJobTitle());
+		managed.setCity(updatedApplication.getCity());
+		managed.setState(updatedApplication.getState());
+		managed.setSalary(updatedApplication.getSalary());
+		managed.setDateApplied(updatedApplication.getDateApplied());
+		managed.setAppStatus(updatedApplication.getAppStatus());
+		managed.setCompanyContact(updatedApplication.getCompanyContact());
+		managed.setComments(updatedApplication.getComments());
+
+		em.flush();
+
+		return managed;
 	}
 	
 }
