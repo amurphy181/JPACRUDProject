@@ -6,11 +6,17 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="/path/to/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-<title>Add a freshly-applied job!</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous"><title>Add a freshly-applied job!</title>
 </head>
-<body>
-
+<body style="background-color: #0099ff; color: beige">
+<div class="container">
+		<h2>Add a New Job Application</h2>
+		<p>Congrats: the hard part is over.</p>
+	</div>
+	<div class="container">
 	<form:form action="jobAppAdded.do" method="POST"
 		modelAttribute="jobApp">
 
@@ -32,9 +38,6 @@
 		<form:label path="dateApplied">Date Applied:</form:label>
 		<form:input path="dateApplied" />
 		<br />
-		<form:label path="appStatus">Application Status:</form:label>
-		<form:input path="appStatus" />
-		<br />
 		<form:label path="companyContact">Company Contact:</form:label>
 		<form:input path="companyContact" />
 		<br />
@@ -44,8 +47,18 @@
 		<form:label path="comments">Comments:</form:label>
 		<form:input path="comments" />
 		<br />
+		<form:label path="appStatus">Application Status:</form:label>
+			<form:select path="appStatus" >
+			<form:options item="${applicationStatus }"></form:options>
+			</form:select>
+		<br />
 
 		<input type="submit" value="Submit" />
-	</form:form>
+	</form:form></div>
+	<br>
+	<div class="container">
+		<a href="index.do" style="color: white">Changed my mind. Back to
+			the main page.</a>
+	</div>
 </body>
 </html>

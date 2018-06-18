@@ -1,6 +1,8 @@
 package com.skilldistillery.jpacrudproject.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,8 +30,6 @@ public class JobAppController {
 		ModelAndView mv = new ModelAndView();
 
 		Application app = jobAppDAO.show(fid);
-		// film is unmanaged after it is outside of the transaction that exists in the
-		// DAO
 
 		mv.addObject("jobApp", app);
 		mv.setViewName("WEB-INF/jobApp/show.jsp");
@@ -100,6 +100,17 @@ public class JobAppController {
 		jobAppDAO.update(id, jobApp);
 		mv.setViewName("WEB-INF/jobApp/show.jsp");
 		return mv;
+	}
+	
+	protected List<String> referenceData(){
+		List<String> referenceData = new ArrayList<>();
+		List<String> applicationStatus = new ArrayList<String>();
+		applicationStatus.add("Applied");
+		applicationStatus.add("Interview");
+		applicationStatus.add("Offer");
+		applicationStatus.add("Accepted");
+		referenceData.addAll(applicationStatus);
+		return referenceData;
 	}
 
 }

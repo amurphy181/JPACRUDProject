@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 </head>
-<body>
+<body style="background-color:#0099ff; color:beige">
 <div class="body" background-color:navy>
 	<h2>Company and Job Application Info</h2>
 	<div>
@@ -30,7 +30,7 @@
 		<form:hidden path="id"/>
 	</form:form>
 	<br>
-	<a href="index.do">Take me to the main page!</a>
+	<a href="index.do" style="color:white">Take me to the main page!</a>
 	</div>
 </body>
 </html>

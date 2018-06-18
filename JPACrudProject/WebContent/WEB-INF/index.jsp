@@ -11,15 +11,16 @@
 <title>Job Application Tracker</title>
 </head>
 
-<body>
+<body style="background-color:#0099ff; color:beige">
+<div class="container"><h2>Ye Olde Job App Tracker</h2><br><br></div>
 	<div class="container">
 		<form action="getJobApp.do" method="GET">
 			<input type="submit" value="Find Application" /> <input type="text"
 				name="fid" />
-		</form>
+		</form><br>
 		<form action="jobs.do" method="GET">
 			<input type="submit" value="List all applications" />
-		</form>
+		</form><br>
 		<form action="addJob.do" method="GET">
 			<input type="submit" value="Add a new application record" />
 		</form>
